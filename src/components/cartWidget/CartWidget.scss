@@ -1,0 +1,23 @@
+.today-CartWidget{
+
+    .contain{
+        z-index: 0;
+        .bluecircle{
+            // position: absolute;
+            // top: 20%;
+            // left: 96%;
+            top: 15%;
+            margin-left: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background-color: #2B2B2B;
+            box-shadow: 1px 2px 29px #012FFF;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

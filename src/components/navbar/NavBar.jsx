@@ -5,6 +5,7 @@ import TodayLogo from './../../assets/img/Today.png'
 import CartWidget from '../cartWidget/CartWidget';
 import { useState } from 'react';
 import CartProduct from '../cartProduct/CartProduct';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [saludos, setSaludos] = useState(false);
@@ -16,7 +17,7 @@ const NavBar = () => {
   return (
     <div className="today-NavBar">
     <div className="contain">
-    <img src={TodayLogo}/>
+    <Link to={"/"}><img src={TodayLogo}/></Link>
         <Menu>
          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
            Modelos disponibles
@@ -27,9 +28,9 @@ const NavBar = () => {
            <MenuItem>1.2m x 1.2m</MenuItem>
          </MenuList>
     </Menu>
-    <CartWidget onClick={handleCartClick} />
+       <Link to={'/cart'}><CartWidget onClick={handleCartClick} /></Link>
             </div>
-            {saludos ? <CartProduct greeting={'hola soy el saludo'}/> : null}
+            {saludos ? <CartProduct greeting={'hola soy el saludo'}/> : null} 
     </div> 
   )
 }

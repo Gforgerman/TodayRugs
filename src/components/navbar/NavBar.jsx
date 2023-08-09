@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons';
 import TodayLogo from './../../assets/img/Today.png'
 import CartWidget from '../cartWidget/CartWidget';
 import { useState } from 'react';
-import ItemListContainer from '../itemListContainer/ItemListContainer';
+import CartProduct from '../cartProduct/CartProduct';
 
 const NavBar = () => {
     const [saludos, setSaludos] = useState(false);
@@ -29,7 +29,7 @@ const NavBar = () => {
     </Menu>
     <CartWidget onClick={handleCartClick} />
             </div>
-            {saludos ? <ItemListContainer greeting={'hola soy el saludo'}/> : null}
+            {saludos ? <CartProduct greeting={'hola soy el saludo'}/> : null}
     </div> 
   )
 }

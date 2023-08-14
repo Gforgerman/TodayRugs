@@ -1,33 +1,44 @@
-import { useEffect, useState } from 'react';
-import Item from '../item/Item'
+import ItemList from '../itemList/ItemList'
 import './ItemListContainer.scss'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
-  const getCharacters = async () => {
-    const response = await fetch ("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
+  const { category } = useParams()
+  const todayProducts = [
+    { id: 1, nombre: "Pikachu", descripcion: 'tapete A', stock: 5, category: 'min' },
+    { id: 2, nombre: "murakami", descripcion: 'tapete A', stock: 8, category: 'min' },
+    { id: 3, nombre: "blastoise", descripcion: 'tapete B', stock: 3, category: 'mid' },
+    { id: 4, nombre: "gengar", descripcion: 'tapete B', stock: 12, category: 'mid' },
+    { id: 5, nombre: "cdg", descripcion: 'tapete C', stock: 6, category: 'max' },
+  ]
 
-    return data.results;
-  }
+  const getProductos = new Promise((resolve, reject) => {
+    if (todayProducts.length > 0) {
+      setTimeout(() => {
+        resolve(todayProducts)
+      }, 2000);
+    } else {
+      reject(new Error)
+    }
+  })
 
-  const [characters, setCharacters] = useState([])
+  getProductos
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("error")
+    })
 
-  useEffect(() => {
-    getCharacters().then((characters) => setCharacters(characters));
-  }, [])
-  
-
+  const filteredProducts = todayProducts.filter((product) => product.category === category)
   return (
     <div className='today-ItemListContainer'>
-        <div className="contenedoritem">
-          {characters.map((character) => (
-            <Item
-              key={character.id}
-              image={character.image}
-              name={character.name}
-            />
-          ))}
-        </div>
+      <div className="contenedoritem">
+        <ItemList
+          productos={filteredProducts}
+        />
+      </div>
     </div>
   )
 }

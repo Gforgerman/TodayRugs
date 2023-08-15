@@ -1,4 +1,4 @@
-import "./CartProduct.scss";
+import './CartProduct.scss';
 
 const CartProduct = ({ greeting }) => {
   return (

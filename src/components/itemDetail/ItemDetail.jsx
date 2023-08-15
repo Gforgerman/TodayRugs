@@ -1,21 +1,17 @@
-import { useParams } from "react-router-dom";
-import Item from "../item/Item";
+import Item from '../commons/item/Item';
 
-const ItemDetail = ({ productos }) => {
-    const { id } = useParams();
-    const filteredProducts = productos.filter((product) => product.id == id);
-    return (
-        <div className="today-itemdetail">
-            {filteredProducts.map((p) => (
-                <Item
-                    key={p.id}
-                    image={p.imagen}
-                    name={p.nombre}
-                    description={p.descripcion}
-                />
-            ))}
-        </div>
-    );
-};
+function ItemDetail({ productos }) {
+  return (
+    <div className="today-itemdetail">
+      {productos.map((p) => (
+        <Item
+          key={p.id}
+          image={p.imagen}
+          name={p.nombre}
+          description={p.descripcion} />
+      ))}
+    </div>
+  );
+}
 
 export default ItemDetail;

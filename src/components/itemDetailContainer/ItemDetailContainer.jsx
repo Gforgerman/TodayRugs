@@ -1,51 +1,56 @@
-import ItemDetail from "../itemDetail/ItemDetail";
-import Pikachu from "./../../assets/img/pikachu.jpeg";
-import Murakmi from "./../../assets/img/murakami.jpeg";
-import Blastoise from "./../../assets/img/blastoise.jpeg";
-import Gengar from "./../../assets/img/gengar.jpeg";
-import Cdg from "./../../assets/img/cdg.jpeg";
+import ItemDetail from '../itemDetail/ItemDetail';
+import Pikachu from './../../assets/img/pikachu.png';
+import Murakmi from './../../assets/img/murakami.png';
+import Blastoise from './../../assets/img/blastoise.png';
+import Gengar from './../../assets/img/gengar.png';
+import Cdg from './../../assets/img/cdg.png';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [data, setData] = useState([]);
+
   const todayProducts = [
     {
       id: 1,
       imagen: Pikachu,
-      nombre: "Pikachu",
-      descripcion: "tapete A",
+      nombre: 'Pikachu',
+      descripcion: 'tapete A',
       stock: 5,
-      category: "min",
+      category: 'min',
     },
     {
       id: 2,
       imagen: Murakmi,
-      nombre: "murakami",
-      descripcion: "tapete A",
+      nombre: 'murakami',
+      descripcion: 'tapete A',
       stock: 8,
-      category: "min",
+      category: 'min',
     },
     {
       id: 3,
       imagen: Blastoise,
-      nombre: "blastoise",
-      descripcion: "tapete B",
+      nombre: 'blastoise',
+      descripcion: 'tapete B',
       stock: 3,
-      category: "mid",
+      category: 'mid',
     },
     {
       id: 4,
       imagen: Gengar,
-      nombre: "gengar",
-      descripcion: "tapete B",
+      nombre: 'gengar',
+      descripcion: 'tapete B',
       stock: 12,
-      category: "mid",
+      category: 'mid',
     },
     {
       id: 5,
       imagen: Cdg,
-      nombre: "cdg",
-      descripcion: "tapete C",
+      nombre: 'cdg',
+      descripcion: 'tapete C',
       stock: 6,
-      category: "max",
+      category: 'max',
     },
   ];
 
@@ -59,18 +64,20 @@ const ItemDetailContainer = () => {
     }
   });
 
-  getProductos
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.log(error);
-      alert("error");
-    });
+  useEffect(() => {
+    getProductos
+      .then((res) => {
+        setData(res.filter((item) => item.id === parseInt(id)));
+      })
+      .catch((error) => {
+        console.log(error);
+        alert('error');
+      });
+  }, []);
 
   return (
     <div className="today-ItemDetailContainer">
-      <ItemDetail productos={todayProducts} />
+      <ItemDetail productos={data} />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import "./Navbar.scss";
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import TodayLogo from "./../../assets/img/Today.png";
-import CartWidget from "../cartWidget/CartWidget";
+import CartWidget from "../commons/cartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {

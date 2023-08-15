@@ -1,10 +1,10 @@
-import "./../src/styles/main.scss";
-import Home from "./Home";
-import Cart from "./components/cart/cart";
-import ItemDetail from "./components/itemDetail/ItemDetail";
-import ItemListContainer from "./components/itemListContainer/ItemListContainer";
-import NavBar from "./components/navbar/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './../src/styles/main.scss';
+import Home from './Home';
+import Cart from './components/commons/atoms/cart/Cart';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import NavBar from './components/navbar/NavBar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <div className="today-home">
@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/cart" element={<Cart />} />
-          <Route exact path="/item/:id" element={<ItemDetail />} />
+          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route
             exact
             path="/category/:category"

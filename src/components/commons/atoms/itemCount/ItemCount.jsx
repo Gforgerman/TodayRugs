@@ -1,6 +1,6 @@
-import "./ItemCount.scss";
-import { Button } from "@chakra-ui/react";
-import { useState } from "react";
+import './ItemCount.scss';
+import { Button } from '@chakra-ui/react';
+import { useState } from 'react';
 
 const ItemCount = () => {
   const [contador, setContador] = useState(0);

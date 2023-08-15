@@ -1,26 +1,26 @@
-:root{
+:root {
   background-color: #2b2b2b;
   opacity: 1;
-  font-family:'Poppins', sans-serif;
-  color: #F2F5FA;
+  font-family: "Poppins", sans-serif;
+  color: #f2f5fa;
 
-  body{
-      margin: 0;
-      background-color: #2b2b2b;
-      color: #F2F5FA;
+  body {
+    margin: 0;
+    background-color: #2b2b2b;
+    color: #f2f5fa;
   }
 
-  p{
-      margin: 0 auto;
+  p {
+    margin: 0 auto;
   }
-  a{
-      text-decoration: none;
-      color: inherit;
+  a {
+    text-decoration: none;
+    color: inherit;
   }
   input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
-  input:-webkit-autofill:focus, 
-  input:-webkit-autofill:active{
-      -webkit-box-shadow: 0 0 0 30px white inset !important;
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
-} 
+}

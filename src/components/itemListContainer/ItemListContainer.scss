@@ -1,12 +1,12 @@
 .today-ItemListContainer {
-    width: 100%;
-    background-color: #2b2b2b;
-    padding: 3em 4em;
+  width: 100%;
+  background-color: #2b2b2b;
+  padding: 3em 4em;
 
-    .contenedoritem {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2em;
-    }
+  .contenedoritem {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2em;
+  }
 }

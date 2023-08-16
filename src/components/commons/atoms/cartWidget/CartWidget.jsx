@@ -1,5 +1,5 @@
 import './CartWidget.scss';
-import Cart from './../../assets/icons/cart.svg';
+import Cart from './../../../../assets/icons/cart.svg';
 
 const CartWidget = ({ onClick }) => {
   return (

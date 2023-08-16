@@ -1,4 +1,5 @@
-import Item from '../commons/item/Item';
+import Item from '../commons/atoms/item/Item';
+
 
 function ItemDetail({ productos }) {
   return (

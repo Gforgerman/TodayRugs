@@ -1,12 +1,31 @@
-.today-aboutusmin{
+.today-aboutusmin {
+    position: relative; /* Agregamos position relative para que los elementos hijos puedan tener position absolute */
     width: 100%;
-    background-image:url('./../../../../../assets/img/background-gengar.png');
+    background-image: url('./../../../../../assets/img/background-gengar.png');
     min-height: 710px;
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
+  
+    .contain-aboutmin {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding-top: 4em;
 
-    .contain-aboutmin{
-        width: 100%;
+      .empty{
+        width: 40%;
+      }
+      .textabout{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        align-items: flex-end;
+        gap: 1em;
+      }
     }
-}
+  }
+  

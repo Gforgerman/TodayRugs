@@ -1,10 +1,44 @@
 .today-item {
   .css-jv498s {
     max-width: 500px;
+    border-radius: 0px 0px 21px 21px;
 
     img {
       width: auto;
       max-height: 500px;
+    }
+
+    .textItem{
+      padding: 1.5em;
+      gap: 12px;
+
+      .price{
+        text-align: center;
+        color: #012FFF;
+      }
+    }
+
+    .containbtn-item{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .today-itemcount{
+      padding: 0 1em;
+    }
+
+    .css-jut409{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: #012FFF;
+      padding: 2em 0px 2em;
+      border-radius: 0px 0px 20px 20px;
+    }
+
+    .css-1mbo1ls{
+      text-align: center;
     }
   }
 }

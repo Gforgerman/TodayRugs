@@ -6,6 +6,7 @@ import Murakmi from './../../assets/img/murakami.png';
 import Blastoise from './../../assets/img/blastoise.png';
 import Gengar from './../../assets/img/gengar.png';
 import Cdg from './../../assets/img/cdg.png';
+
 const ItemListContainer = () => {
   const { category } = useParams();
   const todayProducts = [

@@ -1,5 +1,9 @@
 .today-ItemList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5em;
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 2.5em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2em;
 }

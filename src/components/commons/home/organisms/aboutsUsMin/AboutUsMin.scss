@@ -25,6 +25,16 @@
         text-align: right;
         align-items: flex-end;
         gap: 1em;
+
+        .css-jtpe93{
+          color: #ffffff;
+          padding-top: 1em;
+
+          &:hover{
+              text-decoration: underline #ffffff;
+              transform: translateY(-8px);
+          }
+      }
       }
     }
   }

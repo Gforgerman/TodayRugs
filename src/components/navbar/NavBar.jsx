@@ -18,6 +18,9 @@ const NavBar = () => {
           </MenuButton>
           <MenuList>
             <MenuItem>
+              <Link to={'/productos'}>Todos los productos</Link>
+            </MenuItem>
+            <MenuItem>
               <Link to={`/category/${'min'}`}>60cm x 60cm</Link>
             </MenuItem>
             <MenuItem>

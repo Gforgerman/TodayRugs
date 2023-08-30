@@ -17,7 +17,7 @@ const App = () => {
           <Routes>
             {/* <Route exact path="/" element={<Document />} /> */}
             {/* <Route exact path="/" element={<Collection />} /> */}
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<ItemListContainer />} />
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route exact path="/category/:category" element={<ItemListContainer />}/>

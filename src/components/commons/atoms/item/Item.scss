@@ -11,6 +11,7 @@
     .textItem{
       padding: 1.5em;
       gap: 12px;
+      text-align: center;
 
       .price{
         text-align: center;
@@ -25,20 +26,7 @@
     }
 
     .today-itemcount{
-      padding: 0 1em;
-    }
-
-    .css-jut409{
-      width: 100%;
-      display: flex;
-      align-items: center;
-      background-color: #012FFF;
-      padding: 2em 0px 2em;
-      border-radius: 0px 0px 20px 20px;
-    }
-
-    .css-1mbo1ls{
-      text-align: center;
+      padding: 0em 0;
     }
   }
 }

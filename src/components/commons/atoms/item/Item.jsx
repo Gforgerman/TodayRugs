@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 import ItemCount from '../itemCount/ItemCount';
 import './Item.scss';
 import Text from '../text/Text';
+import { useShoppingCart } from '../../../../context/ShoppingCartContext';
 
 const Item = ({ id, image, name, price, anches, production, categorys }) => {
+
+  const { addToCart } = useShoppingCart();
+
+  const handleAddToCart = (quantity) => {
+    addToCart( image, name, quantity, price);
+  };
+
   return (
     <div className="today-item">
       <Card>
@@ -20,10 +28,7 @@ const Item = ({ id, image, name, price, anches, production, categorys }) => {
           </Stat>
         </div>
         <div className="containbtn-item">
-          <ItemCount />
-          <Button colorScheme="blue">
-            <Text tag={'p'} weight={'heavy'}>Agregar</Text>
-          </Button>
+          <ItemCount onAddToCart={handleAddToCart} />
         </div>
       </Card>
     </div>

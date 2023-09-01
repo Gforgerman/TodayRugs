@@ -1,0 +1,64 @@
+.today-itemdetail{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3em;
+    .contain-itemdetail{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+
+        .imagen-detail{
+            width: 100%;
+        }
+
+        .info-detail{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            .infocontain{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1em;
+
+                .today-itemcount{
+                    gap: 1em;
+                }
+
+                .containbtn-item{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1em;
+
+                    .today-itemcount{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+
+                        .contain-count {
+                            width: 30%;
+                        }
+
+                        .css-jut409{
+                            border-radius: 20px 20px 20px 20px;
+                        }
+                    }
+                    .css-jut409{
+                        width: 100%;
+                    }
+                }
+
+                p{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+

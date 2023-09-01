@@ -1,8 +1,9 @@
 import './ItemCount.scss';
 import { Button } from '@chakra-ui/react';
 import { useState } from 'react';
+import Text from '../text/Text';
 
-const ItemCount = () => {
+const ItemCount = ({onAddToCart}) => {
   const [contador, setContador] = useState(0);
 
   const suma = () => {
@@ -15,11 +16,20 @@ const ItemCount = () => {
     }
   };
 
+  const handleAddToCart = () => {
+    onAddToCart(contador); 
+  };
+
   return (
     <div className="today-itemcount">
-      <Button onClick={resta}>menos</Button>
-      <p>{contador}</p>
-      <Button onClick={suma}>mas</Button>
+      <div className="contain-count">
+        <Button onClick={resta}>-</Button>
+        <p>{contador}</p>
+        <Button onClick={suma}>+</Button>
+      </div>
+      <Button colorScheme="blue" onClick={handleAddToCart}>
+        <Text tag={'p'} weight={'heavy'}>Agregar</Text>
+      </Button>
     </div>
   );
 };

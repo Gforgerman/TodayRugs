@@ -1,3 +1,50 @@
 .today-cart {
   background-color: #2b2b2b;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .cart-contain{
+    padding-top: 3em;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .letalbtn{
+      width: 100%;
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  .cart-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  hr{
+    width: 100%;
+    background-color: #012fff;
+    border: none;
+    height: 1px;
+  }
+
+  .total{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+
+    .gasto-total{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .checkoutbtn{
+      width: 100%;
+      display: flex;
+      justify-content: end;
+    }
+  }
 }

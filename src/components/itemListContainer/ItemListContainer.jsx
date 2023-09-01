@@ -1,35 +1,35 @@
 import ItemList from '../itemList/ItemList';
 import './ItemListContainer.scss';
 import { useParams } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Store from '../commons/home/organisms/store/Store';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { database } from '../../main';
+import Loader from '../commons/atoms/loader/Loader';
 
 const ItemListContainer = () => {
 
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-  const {categoriaId} = useParams(); 
+  const {categoria} = useParams(); 
 
   useEffect(() => {        
 
-    console.log('dasds');
              
     const getData = async () => {
 
-      const queryRef = !categoriaId
+      const queryRef = !categoria
 
         ? collection(database, 'TAPETES')
 
         : query(
           collection(database, 'TAPETES'),
-          where('type', '==', categoriaId)
+          where('categoria', '==', categoria)
         );
 
       const response = await getDocs(queryRef);
 
       const productos = response.docs.map((doc) => {
-        console.log(doc.id);
         const newProduct = {
           ...doc.data(),
           id: doc.id,
@@ -38,17 +38,19 @@ const ItemListContainer = () => {
         return newProduct;
       });
       setTimeout(() => {
-
+        setLoading(false);
         setProducts(productos);
     
-      }, 1000);
+      }, 2000);
     };
 
     getData();
 
-  }, [categoriaId]);
+  }, [categoria]);
 
-  console.log(products);
+  if (loading) {
+    return <Loader/>;
+  }
 
   return (
     <div className="today-ItemListContainer">
@@ -59,7 +61,7 @@ const ItemListContainer = () => {
   );
 };
 
-export default ItemListContainer;
+export default React.memo(ItemListContainer);
 
 // const { category } = useParams();
 

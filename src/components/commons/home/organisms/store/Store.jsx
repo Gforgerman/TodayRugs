@@ -10,26 +10,59 @@ import Blastoise from './../../../../../assets/img/blastoise.png';
 import Gengar from './../../../../../assets/img/gengar.png';
 import Cdg from './../../../../../assets/img/cdg.png';
 import ItemList from '../../../../itemList/ItemList';
-import { collection, getDocs, getFirestore, limit, query } from 'firebase/firestore';
+import { collection, getDocs, getFirestore, limit, query, where } from 'firebase/firestore';
+import { database } from '../../../../../main';
+import Loader from '../../../atoms/loader/Loader';
 
 const Store = () => {
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-  
-  useEffect(() => {
-    const db = getFirestore();
-    const itemCollections = collection(db, 'TAPETES');
-    const limitedQuery = query(itemCollections, limit(4)); // Limitamos la consulta a 4 productos
+  const {categoriaId} = useParams(); 
 
-    getDocs(limitedQuery).then((snapshots) => {
-      const docs = snapshots.docs.map((doc) => doc.data());
-      setProducts(docs);
-    });
-  }, []);
+  useEffect(() => {        
+
+    const getData = async () => {
+
+      const queryRef = !categoriaId
+
+        ? collection(database, 'TAPETES')
+
+        : query(
+          collection(database, 'TAPETES'),
+          where('type', '==', categoriaId)
+        );
+
+      const response = await getDocs(queryRef);
+
+      const productos = response.docs.map((doc) => {
+        const newProduct = {
+          ...doc.data(),
+          id: doc.id,
+        };
+
+        return newProduct;
+      });
+      setTimeout(() => {
+        setLoading(false);
+        setProducts(productos);
+    
+      }, 1000);
+    };
+
+    getData();
+
+  }, [categoriaId]);
+
+  if (loading) {
+    return <Loader/>;
+  }
+
+  const firstFourProducts = products.slice(0, 4);
 
   return (
     <div className='today-store'>
       <div className="product">
-        <ItemList productos={products} />
+        <ItemList productos={firstFourProducts} />
       </div>
       <div className="store-text">
         <img src={TodayLogo}/>

@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: center;
     padding: 2em 0 2em 0;
+    gap: 3em;
 
     .product{
         width: 40%;
@@ -21,10 +22,13 @@
 
         .today-item{
             img{
-                width: auto;
-                max-height: 300px;
+                width: 484px;
+                height: auto;
             }
 
+            .today-itemcount{
+                display: none;
+            }
             .css-jut409{
                 background-color: #2b2b2b;
               }

@@ -1,6 +1,15 @@
 .today-itemcount {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  .contain-count{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+  .css-jut409{
+    width: 100%;
+    background-color: #012FFF;
+      padding: 2em 0px 2em;
+      border-radius: 0px 0px 20px 20px;
+  }
 }

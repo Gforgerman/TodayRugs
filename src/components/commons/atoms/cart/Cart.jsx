@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { useShoppingCart } from '../../../../context/ShoppingCartContext';
 import CartProduct from '../cartProduct/CartProduct';
+import CheckOutForm from '../checkOutForm/CheckOutForm';
 import EmptyCart from '../emptyCart/EmptyCart';
 import Text from '../text/Text';
 import './Cart.scss';
@@ -14,7 +16,11 @@ const Cart = () => {
     }, 0);
   };
 
-  
+  const [isCheckOutVisible, setIsCheckOutVisible] = useState(false);
+
+  const handleShowCheckOut = () => {
+    setIsCheckOutVisible(true);
+  };
 
 
   return (
@@ -26,7 +32,7 @@ const Cart = () => {
             <Text tag={'p'} weight={'heavy'}>VACÍAR CARRITO</Text>
           </Button>
         </div>)}
-        {cartItems.length === 0 ? ( // Verifica si no hay productos en el carrito
+        {cartItems.length === 0 ? (
           <EmptyCart/>
         ) : (
           cartItems.map((item, index) => (
@@ -50,10 +56,11 @@ const Cart = () => {
             </div>
             <div className='checkoutbtn'>
               <Button colorScheme='messenger'> 
-                <Text tag={'p'} weight={'heavy'}>CHECK OUT</Text>
+                <Text tag={'p'} weight={'heavy'} onClick={handleShowCheckOut}>CHECK OUT</Text>
               </Button>
             </div>
           </div>)}
+        {isCheckOutVisible && <CheckOutForm />}
       </div>
     </div>
   );
